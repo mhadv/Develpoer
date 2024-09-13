@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /  # Specify source directory
+    destination: /var/www/html  # Destination on EC2 instance
+hooks:
+  AfterInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+
